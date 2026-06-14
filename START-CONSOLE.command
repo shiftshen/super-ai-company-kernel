@@ -18,6 +18,7 @@ cat > "$PLIST" <<EOF
   <key>ProgramArguments</key>
   <array>
     <string>/Users/shift/openclaw/company-kernel/bin/company-api-gateway</string>
+    <string>--host</string><string>0.0.0.0</string>
     <string>--port</string><string>8788</string>
     <string>--quiet</string>
   </array>
@@ -43,4 +44,4 @@ echo "--- 验收（应输出 <!DOCTYPE html）:"
 curl -s http://127.0.0.1:8788/ | head -c 60; echo
 set +x
 echo ""
-echo "=== 完成。控制台地址: http://127.0.0.1:8788/  日志: $LOG ==="
+echo "=== 完成。控制台地址: http://127.0.0.1:8788/ 或 http://192.168.3.88:8788/  日志: $LOG ==="
